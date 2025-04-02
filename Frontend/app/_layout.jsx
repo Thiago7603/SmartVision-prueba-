@@ -11,13 +11,10 @@ export default function RootLayout() {
   });
 
   return (
-    <Stack>
+    <Stack screenOptions={{
+      headerShown: false
+    }}>
       <Stack.Screen name="Landing" 
-        options={{
-          headerShown: false
-        }}
-      />
-      <Stack.Screen name="auth/Login"
         options={{
           headerShown: false
         }}
