@@ -1,8 +1,12 @@
 import React from 'react';
 import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
+import { useRouter } from 'expo-router';
 
 export default function Landing() {
+
+  const router = useRouter();
+
   return (
     <View style={styles.container}>
       {/* Hero Image */}
@@ -26,14 +30,16 @@ export default function Landing() {
       </View>
 
       {/* CTA Button */}
-      <TouchableOpacity style={styles.buttonContainer}>
-        <LinearGradient
-          colors={['#310071', '#C20054']}
-          start={{ x: 0, y: 0 }}
-          end={{ x: 1, y: 1 }}
-          style={styles.button}>
-          <Text style={styles.buttonText}>COMENZAR</Text>
-        </LinearGradient>
+      <TouchableOpacity 
+        onPress={() => {router.push('/auth/Login');}}
+        style={styles.buttonContainer}>
+          <LinearGradient
+            colors={['#310071', '#C20054']}
+            start={{ x: 0, y: 0 }}
+            end={{ x: 1, y: 1 }}
+            style={styles.button}>
+            <Text style={styles.buttonText}>COMENZAR</Text>
+          </LinearGradient>
       </TouchableOpacity>
     </View>
   );

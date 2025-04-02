@@ -11,7 +11,7 @@ export default function Index() {
       }}
     >
 
-      <Redirect href={'/Landing'} />
+      <Redirect href={'/auth/Login'} />
 
     </View>
   );
