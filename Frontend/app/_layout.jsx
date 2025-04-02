@@ -10,5 +10,13 @@ export default function RootLayout() {
     'outfit-semibold': require('./../assets/fonts/Outfit-SemiBold.ttf'),
   });
 
-  return <Stack />;
+  return (
+    <Stack>
+      <Stack.Screen name="Landing" 
+        options={{
+          headerShown: false
+        }}
+      />
+    </Stack>
+  );
 }
