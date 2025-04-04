@@ -9,16 +9,16 @@ export default function Landing() {
 
   return (
     <View style={styles.container}>
-      {/* Hero Image */}
-      <Image 
-        source={require('./../assets/images/fondo1.png')}
-        style={styles.heroImage}
-      />
+      {/* App Title with Gradient */}
+      <Text style={styles.title}>SMART VISION</Text>
 
       {/* Content Section */}
       <View style={styles.contentContainer}>
-        {/* App Title with Gradient */}
-        <Text style={styles.title}>SMART VISION</Text>
+        {/* Hero Image */}
+        <Image 
+          source={require('./../assets/images/fondo1.png')}
+          style={styles.heroImage}
+        />
 
         {/* Description Card */}
         <View style={styles.card}> 
@@ -53,17 +53,19 @@ const styles = StyleSheet.create({
   heroImage: {
     width: '100%',
     height: 300,
-    marginTop: 100,
+    marginTop: 10,
   },
   contentContainer: {
     marginTop: 25,
+    paddingTop: 5,
     padding: 20,
     alignItems: 'center',
     width: '100%',
   },
   title: {
-    fontSize: 40,
-    fontWeight: 'bold',
+    marginTop: 90,
+    fontSize: 45,
+    fontWeight: 750,
     textAlign: 'center',
     color: 'transparent',
     backgroundImage: 'linear-gradient(90deg, #310071, #C20054)',

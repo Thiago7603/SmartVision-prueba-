@@ -1,6 +1,6 @@
 import { View, Text, TextInput, Image, StyleSheet, TouchableOpacity } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
-import MaterialIcons from '@expo/vector-icons/MaterialIcons';
+import { MaterialIcons } from '@expo/vector-icons';
 import React, { useState } from 'react';
 import { useRouter } from 'expo-router';
 
@@ -13,16 +13,16 @@ export default function Login() {
 
   return (
     <View style={styles.container}>
-      {/* Hero Image */}
-      <Image 
-        source={require('./../../assets/images/fondo1.png')}
-        style={styles.heroImage}
-      />
+      {/* App Title with Gradient */}
+      <Text style={styles.title}>SMART VISION</Text>
 
       {/* Content Section */}
       <View style={styles.contentContainer}>
-        {/* App Title with Gradient */}
-        <Text style={styles.title}>SMART VISION</Text>
+        {/* Hero Image */}
+        <Image 
+          source={require('./../../assets/images/fondo1.png')}
+          style={styles.heroImage}
+        />
 
         {/* Login Card */}
         <View style={styles.card}>
@@ -74,7 +74,7 @@ export default function Login() {
 
           {/* Login Button */}
           <TouchableOpacity 
-            onPress={() => router.push('/auth/Login')}
+            onPress={() => router.replace('/(tabs)/Home')}
             style={styles.buttonContainer}
           >
             <LinearGradient
@@ -108,17 +108,16 @@ const styles = StyleSheet.create({
   heroImage: {
     width: '100%',
     height: 250,
-    marginTop: 50,
   },
   contentContainer: {
-    marginTop: 10,
     padding: 10,
     alignItems: 'center',
     width: '100%',
   },
   title: {
-    fontSize: 40,
-    fontWeight: 'bold',
+    marginTop: 50,
+    fontSize: 45,
+    fontWeight: 750,
     textAlign: 'center',
     color: 'transparent',
     backgroundImage: 'linear-gradient(90deg, #310071, #C20054)',
