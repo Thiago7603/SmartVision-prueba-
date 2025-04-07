@@ -16,8 +16,7 @@ Esta capa es la interfaz de usuario y la interacción con el usuario.
 Esta capa maneja la lógica central de la aplicación y la comunicación con la base de datos.
 
 ### Tecnologías:
-- **Node.js con Express.js**: Framework para la creación del servidor backend.
-- **Firebase Functions** (opcional): Para lógica del backend sin necesidad de un servidor dedicado.
+- **Firebase Functions**: Para lógica del backend sin necesidad de un servidor dedicado.
 
 ---
 
