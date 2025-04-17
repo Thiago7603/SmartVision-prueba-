@@ -1,35 +1,61 @@
-# SmartVision
+# 🧠 Smart Vision
 
-# Arquitectura del Proyecto SmartVision
+**Smart Vision** es una aplicación móvil desarrollada con **React Native (Expo)** que utiliza tecnologías de **visión por computadora** y **realidad aumentada** para ofrecer una experiencia de entrenamiento físico inteligente y segura.
 
-## 1. Capa de Presentación (Frontend)
-Esta capa es la interfaz de usuario y la interacción con el usuario.
+## 🚀 Descripción General
 
-### Tecnologías:
-- **React Native (Expo)**: Para construir la interfaz de usuario.
-- **ARCore**: Para funcionalidades de realidad aumentada.
-- **MediaPipe**: Para detección de posturas en tiempo real.
+Smart Vision permite a los usuarios:
+- Iniciar sesión o registrarse de forma segura.
+- Visualizar ejercicios con instrucciones detalladas.
+- Entrenar usando una guía visual con **ARCore**.
+- Corregir su postura en tiempo real gracias a **MediaPipe**.
+- Consultar estadísticas personalizadas de su desempeño.
+- Gestionar su perfil y progreso.
 
----
-
-## 2. Capa de Lógica de Negocio (Backend)
-Esta capa maneja la lógica central de la aplicación y la comunicación con la base de datos.
-
-### Tecnologías:
-- **Firebase Functions**: Para lógica del backend sin necesidad de un servidor dedicado.
+Esta app busca **reducir el riesgo de lesiones** y **mejorar la técnica** del usuario durante la actividad física.
 
 ---
 
-## 3. Capa de Datos (Base de Datos y Servicios en la Nube)
-Esta capa almacena los datos y maneja su persistencia.
+## ⚙️ Tecnologías Utilizadas
 
-### Tecnologías:
-- **Firebase Firestore (NoSQL)**: Para almacenar datos en formato JSON de manera escalable.
-- **Firebase Storage**: Para alojar imágenes y modelos 3D utilizados en realidad aumentada.
+- **Frontend**: [React Native (Expo)](https://expo.dev/)  
+- **Autenticación y Base de Datos**: [Firebase](https://firebase.google.com/)  
+- **Visión por Computadora**: [MediaPipe](https://mediapipe.dev/)  
+- **Realidad Aumentada**: [ARCore](https://developers.google.com/ar)
 
 ---
 
-### Nota
-Cada capa está diseñada para trabajar de manera independiente pero integrada, proporcionando modularidad, escalabilidad y facilidad de mantenimiento.
+## 🧱 Arquitectura por Capas
 
+El proyecto está estructurado siguiendo una **arquitectura limpia (Clean Architecture)** basada en tres capas principales:
 
+### 1. **Presentación (`app/`)**
+Contiene toda la lógica de interfaz de usuario:
+- Pantallas (`Landing`, `Login`, `Register`, `Home`, `Dashboard`, `Profile`)
+- Navegación
+- Componentes visuales
+
+### 2. **Dominio (`core/`)**
+Incluye:
+- Casos de uso (ej. iniciar sesión, registrar ejercicio, obtener estadísticas)
+- Modelos de datos
+- Validaciones de negocio
+
+### 3. **Infraestructura (`infra/`)**
+Abstracción de tecnologías externas:
+- `firebase/`: Autenticación, Firestore, almacenamiento de usuarios.
+- `mediapipe/`: Detección y corrección de posturas.
+- `arcore/`: Visualización en realidad aumentada.
+
+---
+
+## 🛠️ Estructura de Carpetas (resumen)
+
+```bash
+📦SmartVision
+├── app/             # Capa de presentación (pantallas, navegación, UI)
+├── core/            # Lógica de negocio y modelos (dominio)
+├── infra/           # Servicios externos (Firebase, MediaPipe, ARCore)
+├── assets/          # Imágenes, íconos, fuentes, etc.
+├── package.json
+└── README.md
